@@ -25,21 +25,27 @@ public class DestroyController : MonoBehaviour {
 	void Update () {
 //		Debug.Log (this.unitychan.GetComponent<Transform> ().position.z);
 //		foreach (GameObject car in cars) {
-			//if (car.GetComponent<Renderer>().isVisible) {
-			if( (cars[carCount].GetComponent<Transform>().position.z) < this.unitychan.GetComponent<Transform>().position.z){
-				Destroy(cars[carCount]);
-				carCount++;
-			}
+		//if (car.GetComponent<Renderer>().isVisible) {
 
-			if( (cones[coneCount].GetComponent<Transform>().position.z) < this.unitychan.GetComponent<Transform>().position.z){
-				Destroy(cones[coneCount]);
+		if ((carCount < cars.Length) && (cars [carCount] != null) && ((cars [carCount].GetComponent<Transform> ().position.z) < this.unitychan.GetComponent<Transform> ().position.z)) {
+			Destroy (cars [carCount]);
+			carCount++;
+		}
+	
+
+		if( (coneCount < cones.Length) && (cones[coneCount] != null) && ((cones[coneCount].GetComponent<Transform>().position.z) < this.unitychan.GetComponent<Transform>().position.z)){
+			if (cones [carCount] != null) {	
+				Destroy (cones [coneCount]);
 				coneCount++;
 			}
+		}
 
-			if( (coins[coinCount].GetComponent<Transform>().position.z) < this.unitychan.GetComponent<Transform>().position.z){
-				Destroy(coins[coinCount]);
+		if ((coinCount < coins.Length) && (coins[coinCount] != null) && ((coins [coinCount].GetComponent<Transform> ().position.z) < this.unitychan.GetComponent<Transform> ().position.z)) {
+			if (coins [coinCount] != null) {
+				Destroy (coins [coinCount]);
 				coinCount++;
 			}
+		}
 
 
 //		if (!this.gameObject.GetComponent<Renderer>().isVisible) {
