@@ -63,6 +63,7 @@ public class UnityChanController : MonoBehaviour {
 			this.upForce *= this.coefficient;
 			this.myAnimator.speed *= this.coefficient;
 		}
+
 	}
 
 	void OnTriggerEnter(Collider other){
